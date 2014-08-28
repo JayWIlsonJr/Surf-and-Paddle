@@ -1,0 +1,30 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  background:
+    linear-gradient(
+      RGBA(26, 112, 179, .6),
+      RGBA(26, 112, 179, .6)
+      ),
+      url(http://cdn.hifipanda.com/518d3e9c8b4f794154.jpg) no-repeat center center fixed;
+  height: 524px;
+  background-size: cover;
+  overflow: auto;
+  border: 1px solid red;
+}
+
+.header_content_area {
+  margin: 0 auto;
+  max-width: 1048px;
+  height: 524px;
+  border: 1px solid yellow;
+
+}
+.main_section {
+  max-width: 1048px;
+  height: 524px;
+  border: 1px solid red;
+  margin: 0 auto;
+}
