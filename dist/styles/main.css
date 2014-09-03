@@ -1,0 +1,490 @@
+/* ==========================================================================
+   SCSS Variables & Mixins
+   ========================================================================== */
+/* ==========================================================================
+   Global CSS Rules
+   ========================================================================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 100%; }
+
+ul {
+  list-style: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0; }
+
+.clear {
+  clear: both; }
+
+/* ==========================================================================
+   Header Area CSS
+   ========================================================================== */
+header {
+  background: linear-gradient(RGBA(26, 112, 250, 0.6), RGBA(26, 112, 250, 0.6)), url("../../img/header.jpg") no-repeat fixed;
+  height: 524px;
+  background-size: cover;
+  overflow: auto; }
+
+.header_content_area {
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1048px;
+  position: relative;
+  overflow: hidden; }
+
+.header_nav {
+  font-family: "Oswald", sans-serif; }
+
+.header_nav a {
+  text-decoration: none;
+  color: #073452; }
+
+.header_nav ul {
+  margin: 0; }
+
+.header_nav > li {
+  position: absolute;
+  top: 19px;
+  left: 828px;
+  display: inline;
+  font-weight: bold; }
+
+.header_logo li {
+  display: inline; }
+
+.header_logo img {
+  position: absolute;
+  top: 5px;
+  left: 15px; }
+
+.header_logo li:last-child {
+  position: absolute;
+  top: 20px;
+  left: 81px;
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: -0.03em; }
+
+.header_nav_links {
+  position: absolute;
+  top: 17px;
+  right: 60px;
+  padding: 0;
+  display: inline-block; }
+
+.header_nav_links img {
+  position: absolute;
+  top: 0;
+  right: -30px;
+  padding: 0;
+  display: inline-block; }
+
+.header_nav_links li {
+  display: inline; }
+
+.header_nav_links > li:first-child {
+  margin: 0 13px 0 0;
+  letter-spacing: 0.06em; }
+
+.header_title a {
+  text-decoration: none;
+  color: #FFF;
+  margin: 187px 0 0 0;
+  display: block;
+  font-size: 3.3em;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.08em; }
+
+.header_tagline {
+  text-align: center;
+  margin: -18px 0 0 0;
+  letter-spacing: 0.03em; }
+
+/* ==========================================================================
+   Main Content Area CSS (contains some sidebar CSS rules)
+   ========================================================================== */
+.main_section {
+  max-width: 1048px;
+  margin: 0 auto; }
+
+.main_content {
+  margin: 70px 0 0 0;
+  padding: 0 0 68px 40px;
+  max-width: 660px;
+  float: left;
+  position: absolute;
+  color: #5E686F; }
+
+.article_heading {
+  text-transform: uppercase;
+  font-size: 3.7em;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1.7px;
+  line-height: 1.2;
+  position: relative;
+  top: -10px; }
+
+.author_info .author_image_small {
+  background: linear-gradient(RGBA(26, 112, 250, 0.6), RGBA(26, 112, 250, 0.6)), url("../../img/me.jpg");
+  height: 22px;
+  width: 22px;
+  background-size: cover;
+  border-radius: 100%;
+  position: relative;
+  top: 0;
+  left: 5px; }
+
+.author_info .author_name a {
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+  margin: 0 0 0 8px;
+  color: #2178B8;
+  padding-left: 22px;
+  font-size: 0.8em;
+  font-weight: 400;
+  position: relative;
+  top: -20px;
+  left: 5px; }
+
+.published_date {
+  color: #9FB0BC;
+  position: relative;
+  top: -20px;
+  left: 15px;
+  font-size: 0.8em; }
+
+.published_date a {
+  color: #9FB0BC; }
+
+.main_content a, .sidebar_content a {
+  color: #A3B3BF; }
+
+.main_content a:hover, .sidebar_content a:hover {
+  transition-property: color;
+  transition-duration: 1s;
+  transition-delay: 0.1;
+  color: #106DB3; }
+
+.quote_pipe::before {
+  content: "|";
+  font-size: 2.5em;
+  margin: 0 10px 0 -8px;
+  color: #D3D3D3;
+  padding: 0;
+  font-weight: 100; }
+
+.quote_block {
+  display: inline;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.7em;
+  font-weight: 300;
+  color: #2178B8;
+  position: relative;
+  top: 0; }
+
+.share_buttons {
+  margin: 25px 0 0 0;
+  position: relative;
+  padding: 0; }
+
+.share_buttons li {
+  display: inline;
+  background-color: #A3B3BF;
+  margin: 0 10px 0 0;
+  padding: 2px 7px 7px 0; }
+
+.share_buttons li span a:hover {
+  display: inline;
+  background-color: #106DB3; }
+
+.share_buttons a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.8em;
+  padding: 0 14px 0 45px;
+  position: relative; }
+
+.share_buttons span a:hover {
+  text-decoration: none;
+  color: white;
+  font-size: 0.8em;
+  padding: 0 14px 0 45px;
+  position: relative; }
+
+.share_buttons img {
+  background-color: #5E686F;
+  height: 31px;
+  width: 31px;
+  position: absolute;
+  top: -5px;
+  left: 0; }
+
+.share_button span a:hover img {
+  background-color: #073452;
+  height: 31px;
+  width: 31px;
+  position: absolute;
+  top: -5px;
+  left: 0; }
+
+/* ==========================================================================
+   Sidebar CSS   
+   ========================================================================== */
+sidebar {
+  float: left;
+  margin: 15px 0 160px 720px; }
+
+.author_sidebar {
+  max-width: 320px;
+  margin: 70px 0 0 0; }
+
+.author_image {
+  background: linear-gradient(RGBA(26, 112, 250, 0.6), RGBA(26, 112, 250, 0.6)), url("../../img/me.jpg");
+  height: 84px;
+  width: 84px;
+  margin: 0 auto;
+  background-size: cover;
+  border-radius: 100%; }
+
+.sidebar_content {
+  max-width: 320px; }
+
+.author_sidebar p {
+  text-align: center;
+  text-transform: uppercase;
+  color: #106DB3;
+  margin: 10px 0 10px 0; }
+
+.author_sidebar ul {
+  margin: 0 0 36px 0; }
+
+.author_sidebar li {
+  display: inline;
+  margin: 0 18px 0 0px;
+  position: relative;
+  top: -15px;
+  left: 10px;
+  font-size: 0.9em; }
+
+.author_sidebar a {
+  text-decoration: none;
+  color: #A8B7C3;
+  font-size: 0.9em; }
+
+.pretty_ad {
+  background: linear-gradient(RGBA(26, 112, 250, 0.6), RGBA(26, 112, 250, 0.6)), url("../../img/911.jpg");
+  height: 300px;
+  width: 278px;
+  background-size: cover;
+  margin: 0 auto; }
+
+.pretty_ad:hover {
+  transition-property: background;
+  transition-duration: 2s;
+  transition-delay: 0.5;
+  background: url(../../img/911.jpg) no-repeat;
+  height: 300px;
+  width: 278px;
+  background-size: cover;
+  margin: 0 auto; }
+
+.author_sidebar span a {
+  float: right;
+  display: inline-block;
+  text-decoration: underline;
+  position: relative;
+  right: 20px;
+  top: 5px;
+  font-size: 0.8em; }
+
+.sidebar_content .heading_three {
+  margin: 68px 0 0 20px;
+  color: #106DB3;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 1.1em;
+  text-transform: uppercase; }
+
+.sidebar_content p {
+  color: #A8B7C3;
+  margin: 10px 0 0 20px;
+  font-size: 0.9em;
+  line-height: 1.7; }
+
+/* ==========================================================================
+   Main Footer Area CSS (area with the 4 images)
+   ========================================================================== */
+.bottom_container {
+  border-top: 1px solid #E1E7EA; }
+
+.bottom_container .heading_two {
+  text-align: center;
+  color: #106DB3;
+  font-family: "Oswald", sans-serif;
+  font-size: 4em;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 40px 0 0 0; }
+
+.recent_posts_container {
+  width: 100%;
+  float: left;
+  margin: 46px 0 0 0; }
+
+.one a, .two a, .three a, .four a {
+  display: block;
+  height: 330px;
+  text-decoration: none;
+  color: #106DB3;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  font-family: "Oswald", sans-serif;
+  padding: 0 20px 0 20px; }
+
+.one span, .two span, .three span, .four span {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 0; }
+
+.one {
+  background: linear-gradient(RGBA(26, 112, 250, 0.6), RGBA(26, 112, 250, 0.6)), url("../../img/one.jpg");
+  background-size: cover;
+  width: 25%;
+  display: inline-block;
+  float: left;
+  height: 330px;
+  position: relative; }
+
+.two {
+  background: linear-gradient(RGBA(26, 112, 250, 0.6), RGBA(26, 112, 250, 0.6)), url("../../img/two.jpg");
+  background-size: cover;
+  width: 25%;
+  display: inline-block;
+  float: left;
+  height: 330px;
+  position: relative; }
+
+.three {
+  background: linear-gradient(RGBA(26, 112, 250, 0.6), RGBA(26, 112, 250, 0.6)), url("../../img/three.jpg");
+  background-size: cover;
+  width: 25%;
+  display: inline-block;
+  float: left;
+  height: 330px;
+  position: relative; }
+
+.four {
+  background: linear-gradient(RGBA(26, 112, 250, 0.6), RGBA(26, 112, 250, 0.6)), url("../../img/four.jpg");
+  background-size: cover;
+  width: 25%;
+  display: inline-block;
+  float: left;
+  height: 330px;
+  position: relative; }
+
+.one:hover {
+  background: linear-gradient(RGBA(26, 112, 250, 0), RGBA(26, 112, 250, 0)), url("../../img/one.jpg");
+  background-size: cover;
+  width: 25%;
+  display: inline-block;
+  float: left;
+  height: 330px;
+  color: white; }
+
+.two:hover {
+  background: linear-gradient(RGBA(26, 112, 250, 0), RGBA(26, 112, 250, 0)), url("../../img/two.jpg");
+  background-size: cover;
+  width: 25%;
+  display: inline-block;
+  float: left;
+  height: 330px;
+  color: white; }
+
+.three:hover {
+  background: linear-gradient(RGBA(26, 112, 250, 0), RGBA(26, 112, 250, 0)), url("../../img/three.jpg");
+  background-size: cover;
+  width: 25%;
+  display: inline-block;
+  float: left;
+  height: 330px;
+  color: white; }
+
+.four:hover {
+  background: linear-gradient(RGBA(26, 112, 250, 0), RGBA(26, 112, 250, 0)), url("../../img/four.jpg");
+  background-size: cover;
+  width: 25%;
+  display: inline-block;
+  float: left;
+  height: 330px;
+  color: white; }
+
+.one a:hover, .two a:hover, .three a:hover, .four a:hover {
+  display: block;
+  height: 330px;
+  color: white;
+  padding: 20 0px 20px 0 20px; }
+
+/* ==========================================================================
+   Bottom Footer Bar CSS (area with the nav links)   
+   ========================================================================== */
+.footer {
+  height: 96px;
+  background-color: #106DB3; }
+
+.footer_container {
+  width: 1048px;
+  margin: 0 auto;
+  position: relative;
+  color: #A3B3BF; }
+
+.footer_container a {
+  color: #A3B3BF; }
+
+.footer_container img {
+  float: left;
+  margin: 0 0 0 20px;
+  position: relative;
+  top: 19px; }
+
+.footer_container p {
+  float: left;
+  margin: 0;
+  position: relative;
+  top: 40px;
+  left: 5px;
+  font-size: 0.9em; }
+
+.footer_container ul {
+  margin: 0;
+  float: right;
+  position: relative;
+  top: 40px;
+  font-size: 0.9em; }
+
+.footer_links a {
+  text-decoration: none; }
+
+.footer_links li:after {
+  content: " | "; }
+
+.footer_links li:last-child:after {
+  content: ""; }
+
+.footer_links li {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  right: 0; }
