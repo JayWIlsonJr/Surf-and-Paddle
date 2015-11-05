@@ -1,53 +1,38 @@
 @import "bourbon/bourbon";
+
 /* ==========================================================================
    SCSS Variables & Mixins
    ========================================================================== */
-
-
 
 $font-size: 100%;
 $primary-font: "Open Sans", sans-serif;
 $secondary-font: "Oswald", sans-serif;
 
-$blue: #106DB3;
-$medium-blue: #2178B8;
+$blue: #106db3;
+$medium-blue: #2178b8;
 $dark-blue: #073452;
-$white: #FFF;
-$grey: #9FB0BC;
-$grey-white: #D3D3D3;
-$grey-blue: #A8B7C3;
-$lighter-grey: #A3B3BF;
-$dark-grey: #5E686F;
+$white: white;
+$grey: #9fb0bc;
+$grey-white: lightgray;
+$grey-blue: #a8b7c3;
+$lighter-grey: #a3b3bf;
+$dark-grey: #5e686f;
 
 @mixin image-overlay-fixed($url) {
-  background: linear-gradient(
-      RGBA(26, 112, 250, .6),
-      RGBA(26, 112, 250, .6)
-  ), url($url) no-repeat fixed;
+  background: linear-gradient(RGBA(26, 112, 250, 0.6), RGBA(26, 112, 250, 0.6)), url($url) no-repeat fixed;
 }
 
 @mixin image-overlay($url) {
-  background: linear-gradient(
-      RGBA(26, 112, 250, .6),
-      RGBA(26, 112, 250, .6)
-  ), url($url);
+  background: linear-gradient(RGBA(26, 112, 250, 0.6), RGBA(26, 112, 250, 0.6)), url($url);
 }
 
 @mixin image-overlay-hover($url) {
-  background: linear-gradient(
-      RGBA(26, 112, 250, 0),
-      RGBA(26, 112, 250, 0)
-  ), url($url);
+  background: linear-gradient(RGBA(26, 112, 250, 0), RGBA(26, 112, 250, 0)), url($url);
 }
-
-
-
 
 /* ==========================================================================
    Global CSS Rules
    ========================================================================== */
-
-
 
 * {
   -webkit-box-sizing: border-box;
@@ -64,28 +49,23 @@ ul {
   list-style: none;
 }
 
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
   padding: 0;
-  margin:0;
+  margin: 0;
 }
 
 .clear {
   clear: both;
 }
 
-
-
-
 /* ==========================================================================
    Header Area CSS
    ========================================================================== */
-
-
 
 header {
   @include image-overlay-fixed("../../img/header.jpg");
@@ -95,7 +75,7 @@ header {
 }
 
 .header_content_area {
-  @include margin(0 auto null auto); 
+  @include margin(0 auto null auto);
   max-width: 1048px;
   position: relative;
   overflow: hidden;
@@ -115,7 +95,7 @@ header {
 }
 
 .header_nav > li {
-  @include position(absolute, 19px null null 828px); 
+  @include position(absolute, 19px null null 828px);
   display: inline;
   font-weight: bold;
 }
@@ -127,22 +107,22 @@ header {
 .header_logo img {
   @include position(absolute, 5px null null 15px);
 }
- 
+
 .header_logo li:last-child {
-  @include position(absolute, 20px null null 81px); 
+  @include position(absolute, 20px null null 81px);
   display: inline-block;
   font-family: $primary-font;
   letter-spacing: -0.03em;
 }
 
 .header_nav_links {
-  @include position(absolute, 17px 60px null null); 
+  @include position(absolute, 17px 60px null null);
   padding: 0;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .header_nav_links img {
-  @include position(absolute, 0 -30px null null); 
+  @include position(absolute, 0 -30px null null);
   padding: 0;
   display: inline-block;
 }
@@ -174,14 +154,9 @@ header {
   letter-spacing: 0.03em;
 }
 
-
-
-
 /* ==========================================================================
    Main Content Area CSS (contains some sidebar CSS rules)
    ========================================================================== */
-
-
 
 .main_section {
   max-width: 1048px;
@@ -244,17 +219,14 @@ header {
   color: $grey;
 }
 
-.main_content a, 
+.main_content a,
 .sidebar_content a {
   color: $lighter-grey;
-
+  transition: all 0.3s;
 }
 
-.main_content a:hover, 
+.main_content a:hover,
 .sidebar_content a:hover {
-  transition-property: color;
-  transition-duration: 1s;
-  transition-delay: 0.1;
   color: $blue;
 }
 
@@ -288,12 +260,13 @@ header {
   display: inline;
   background-color: $lighter-grey;
   margin: 0 10px 0 0;
-  padding: 2px 7px 7px 0;
+  padding: 2px 0 7px 0;
+  transition: background-color 0.3s;
 }
 
-.share_buttons li span a:hover {
-  display: inline;
+.share_buttons li:hover {
   background-color: $blue;
+  cursor: pointer;
 }
 
 .share_buttons a {
@@ -313,7 +286,7 @@ header {
 }
 
 .share_buttons img {
-  background-color: $dark-grey;;
+  background-color: $dark-grey;
   height: 31px;
   width: 31px;
   position: absolute;
@@ -330,14 +303,9 @@ header {
   left: 0;
 }
 
-
-
-
 /* ==========================================================================
    Sidebar CSS   
    ========================================================================== */
-
-
 
 sidebar {
   float: left;
@@ -386,6 +354,11 @@ sidebar {
   text-decoration: none;
   color: $grey-blue;
   font-size: 0.9em;
+  transition: color 0.3s;
+}
+
+.author_sidebar a:hover {
+  color: $blue;
 }
 
 .pretty_ad {
@@ -397,10 +370,7 @@ sidebar {
 }
 
 .pretty_ad:hover {
-  transition-property: background;
-  transition-duration: 2s;
-  transition-delay: 0.5;
-  background: url(../../img/911.jpg)no-repeat;
+  background: url(../../img/911.jpg) no-repeat;
   height: 300px;
   width: 278px;
   background-size: cover;
@@ -433,14 +403,9 @@ sidebar {
   line-height: 1.7;
 }
 
-
-
-
 /* ==========================================================================
    Main Footer Area CSS (area with the 4 images)
    ========================================================================== */
-
-
 
 .bottom_container {
   border-top: 1px solid #E1E7EA;
@@ -457,14 +422,14 @@ sidebar {
 }
 
 .recent_posts_container {
-  width:100%;
+  width: 100%;
   float: left;
   margin: 46px 0 0 0;
 }
 
-.one a, 
-.two a, 
-.three a, 
+.one a,
+.two a,
+.three a,
 .four a {
   display: block;
   height: 330px;
@@ -474,6 +439,7 @@ sidebar {
   font-size: 2.5em;
   font-family: $secondary-font;
   padding: 0 20px 0 20px;
+  transition: all 0.4s;
 }
 
 .one span, .two span, .three span, .four span {
@@ -489,38 +455,38 @@ sidebar {
   width: 25%;
   display: inline-block;
   float: left;
-  height:330px;
+  height: 330px;
   position: relative;
 }
 
 .two {
- @include image-overlay("../../img/two.jpg");
- background-size: cover;
- width: 25%;
- display: inline-block;
- float: left;
- height: 330px;
- position: relative;
+  @include image-overlay("../../img/two.jpg");
+  background-size: cover;
+  width: 25%;
+  display: inline-block;
+  float: left;
+  height: 330px;
+  position: relative;
 }
 
 .three {
- @include image-overlay("../../img/three.jpg");
- background-size: cover;
- width: 25%;
- display: inline-block;
- float: left;
- height: 330px;
- position: relative;
+  @include image-overlay("../../img/three.jpg");
+  background-size: cover;
+  width: 25%;
+  display: inline-block;
+  float: left;
+  height: 330px;
+  position: relative;
 }
 
 .four {
-@include image-overlay("../../img/four.jpg");
-background-size: cover;
-width: 25%;
-display: inline-block;
-float: left;
-height: 330px;
-position: relative;
+  @include image-overlay("../../img/four.jpg");
+  background-size: cover;
+  width: 25%;
+  display: inline-block;
+  float: left;
+  height: 330px;
+  position: relative;
 }
 
 .one:hover {
@@ -529,7 +495,7 @@ position: relative;
   width: 25%;
   display: inline-block;
   float: left;
-  height:330px;
+  height: 330px;
   color: white;
 }
 
@@ -539,7 +505,7 @@ position: relative;
   width: 25%;
   display: inline-block;
   float: left;
-  height:330px;
+  height: 330px;
   color: white;
 }
 
@@ -549,7 +515,7 @@ position: relative;
   width: 25%;
   display: inline-block;
   float: left;
-  height:330px;
+  height: 330px;
   color: white;
 }
 
@@ -559,34 +525,29 @@ position: relative;
   width: 25%;
   display: inline-block;
   float: left;
-  height:330px;
+  height: 330px;
   color: white;
 }
 
-.one a:hover, 
-.two a:hover, 
-.three a:hover, 
+.one a:hover,
+.two a:hover,
+.three a:hover,
 .four a:hover {
   display: block;
   height: 330px;
   color: white;
-  padding: 20
-  0px 20px 0 20px;
+  padding: 20 0px 20px 0 20px;
 }
-
-
-
 
 /* ==========================================================================
    Bottom Footer Bar CSS (area with the nav links)   
    ========================================================================== */
 
-
-
 .footer {
   height: 96px;
   background-color: $blue;
 }
+
 .footer_container {
   width: 1048px;
   margin: 0 auto;
@@ -605,7 +566,7 @@ position: relative;
   top: 19px;
 }
 
-.footer_container p  {
+.footer_container p {
   float: left;
   margin: 0;
   position: relative;
@@ -619,7 +580,7 @@ position: relative;
   float: right;
   position: relative;
   top: 40px;
-  font-size: 0.9em
+  font-size: 0.9em;
 }
 
 .footer_links a {
